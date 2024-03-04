@@ -3,7 +3,6 @@
 #include "Floor.h"
 #include "Cloth.h"
 
-#define numPointLights 0
 
 GLuint width = 1920 * 1;
 GLuint height = 1080 * 1;
@@ -89,7 +88,7 @@ int main(void)
 	cloth.SetSimUniforms();
 	GLcheckError();
 	int readID = 0, writeID = 1;
-	cloth.SetTexture("WG.jpg", "diffuse0", 0);
+	cloth.SetTexture("tex2.jpg", "diffuse0", 0);
 	// MAIN LOOP
 	int counter = 0;
 	while (!glfwWindowShouldClose(window)) 

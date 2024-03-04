@@ -1,17 +1,13 @@
 #include "Camera.h"
 
-Camera::Camera(int width, int height, glm::vec3 position) 
-{
-	m_width = width;
-	m_height = height;
-	m_position = position;
-}
+Camera::Camera(int width, int height, glm::vec3 position) : 
+	m_width(width), m_height(height), m_position(position) {}
 
-void Camera::updateMatrix(float FOVdeg1, float nearPlane1, float farPlane1) 
+void Camera::updateMatrix(float FOVdeg, float nearPlane, float farPlane)
 {
-	m_FOVdeg = FOVdeg1;
-	m_nearPlane = nearPlane1;
-	m_farPlane = farPlane1;
+	m_FOVdeg = FOVdeg;
+	m_nearPlane = nearPlane;
+	m_farPlane = farPlane;
 	m_view = glm::lookAt(m_position, m_position + m_direction, m_up);
 	m_projection = glm::perspective(glm::radians(m_FOVdeg), float(m_width) / float(m_height), m_nearPlane, m_farPlane);
 
@@ -106,7 +102,6 @@ void Camera::Input(GLFWwindow* window, float dt)
 	}
 }
 
-// FOR PICKING
 glm::vec2 Camera::CursorClickPosition(GLFWwindow* window)
 {
 	double mouseOnClickX;

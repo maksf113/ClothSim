@@ -85,7 +85,6 @@ void Texture::texUnit(const ShaderProgram& shader, const char* uniform, GLuint u
 {
 	// get location of the uniform
 	GLuint texUni = glGetUniformLocation(shader.id(), uniform);
-	// shader needs to be activated befor changing the value of a uniform !!!!!!!!!!!!!
 	shader.Activate();
 	glUniform1i(texUni, unit);
 }

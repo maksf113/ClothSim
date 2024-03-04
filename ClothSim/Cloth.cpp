@@ -10,7 +10,6 @@ Cloth::Cloth(float width, float depth, GLuint widthDivisions, GLuint depthDivisi
 	InitMesh();
 	InitIndices();
 	SetVAOs();
-	//Mesh::CreateGLState(m_vertices, m_indices);
 }
 void Cloth::InitMesh()
 {
@@ -76,7 +75,6 @@ void Cloth::AttachShader(const char* vertShader)
 
 void Cloth::Draw(Camera& camera, DrawMode mode)
 {
-	//glBindVertexArray(m_vaoRender[i]);
 	m_vaoRender[m_readID].Bind();
 	m_shader.Activate();
 	m_shader.setMat4("camMatrix", camera.GetMatrix());

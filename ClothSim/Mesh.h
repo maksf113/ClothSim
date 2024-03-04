@@ -25,11 +25,9 @@ public:
 };
 
 template<typename vertexType>
-Mesh<vertexType>::Mesh(std::vector<vertexType>& vertices, std::vector<GLuint>& indices, std::vector<Texture>& textures)
+Mesh<vertexType>::Mesh(std::vector<vertexType>& vertices, std::vector<GLuint>& indices, std::vector<Texture>& textures) : 
+	m_vertices(vertices), m_indices(indices), m_textures(textures)
 {
-	m_vertices = vertices;
-	m_indices = indices;
-	m_textures = textures;
 	CreateGLState(vertices, indices);
 }
 
